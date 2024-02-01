@@ -14,7 +14,7 @@ public class Logging {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-        Object target = null;
+        Object target;
         try{
             target=pjp.proceed();
         }catch (Exception e){
