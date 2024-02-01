@@ -34,7 +34,7 @@
     <bean id="logging" class="com.nhnacademy.edu.springframework.aop.Logging"/>
 
     <aop:config>
-        <aop:pointcut id="sendMessagePointcut" expression="execution(* *.doSendMessage(com.nhnacademy.edu.springframework.domain.User, java.lang.String))"/>
+        <aop:pointcut id="sendMessagePointcut" expression="execution(* *.sendMessage(..))"/>
         <aop:aspect ref="logging">
             <aop:around method="printExecutionTime" pointcut-ref="sendMessagePointcut" />
         </aop:aspect>

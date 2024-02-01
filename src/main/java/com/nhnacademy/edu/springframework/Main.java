@@ -9,11 +9,12 @@ public class Main {
     public static void main(String[] args) {
         String TEST_MESSAGE = "테스트용 내용입니다.";
         User user = new User(
-                "rhs9705kr@naver.com",
-                "010-1234-5678"
+                "유승진",
+                TEST_MESSAGE
         );
         try(ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")){
-            context.getBean("messageSendService", MessageSendService.class).doSendMessage(user, TEST_MESSAGE);
+            MessageSendService messageSendService = context.getBean("messageSendService", MessageSendService.class);
+            messageSendService.doSendMessage(user, TEST_MESSAGE);
         }
     }
 }

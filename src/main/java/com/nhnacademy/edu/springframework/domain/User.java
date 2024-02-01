@@ -1,11 +1,14 @@
 package com.nhnacademy.edu.springframework.domain;
 
-public class User {
-    String email;
-    String phoneNumber;
+import lombok.Getter;
 
-    public User(String email, String phoneNumber){
-        this.email = email;
-        this.phoneNumber = phoneNumber;
+@Getter
+public class User {
+    String name;
+    String text;
+
+    public User(String name, String text){
+        this.name = name;
+        this.text = text;
     }
 }

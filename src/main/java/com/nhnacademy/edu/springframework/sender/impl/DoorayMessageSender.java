@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class DoorayMessageSender implements MessageSender {
 
+
     @Value("${name}")String name;
     @Value("${text}")String text;
     DoorayHookSender doorayHookSender;
@@ -19,8 +20,12 @@ public class DoorayMessageSender implements MessageSender {
     }
     @Override
     public boolean sendMessage(User user, String message) {
-        doorayHookSender.send(DoorayHook.builder().botName(name).text(text).build());
-        System.out.println("보냈습니다.");
-        return true;
+        try {
+            doorayHookSender.send(DoorayHook.builder().botName(user.getName()).text(user.getText()).build());
+            return true;
+        }catch(Throwable e){
+            e.printStackTrace();
+        }
+        return false;
     }
 }

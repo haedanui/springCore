@@ -16,8 +16,8 @@ public class MessageSendService {
         this.messageSender = messageSender;
     }
 
-    public void doSendMessage(User user, String message){
-        messageSender.sendMessage(user, message);
+    public boolean doSendMessage(User user, String message){
+        return messageSender.sendMessage(user, message);
     }
 
 }
