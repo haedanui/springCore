@@ -14,29 +14,13 @@ import org.springframework.web.client.RestTemplate;
 @PropertySource("classpath:application.properties")
 @ComponentScan(basePackages = "com.nhnacademy.edu.springframework")
 public class SenderConfig {
+    @Bean
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
 
-//    @Bean
-//    public DoorayMessageSender doorayMessageSender(DoorayHookSender doorayHookSender){
-//        return new DoorayMessageSender(doorayHookSender);
-//    }
-
-//    @Bean
-//    public MessageSendService messageSendService(MessageSender doorayMessageSender){
-//        return new MessageSendService(doorayMessageSender);
-//    }
-
-//    @Bean
-//    public Logging logging(){
-//        return new Logging();
-//    }
-
-//    @Bean
-//    public RestTemplate restTemplate(){
-//        return new RestTemplate();
-//    }
-//
-//    @Bean
-//    public DoorayHookSender doorayHookSender(RestTemplate restTemplate, @Value("${hookUrl}") String hookUrl){
-//        return new DoorayHookSender(restTemplate, hookUrl);
-//    }
+    @Bean
+    public DoorayHookSender doorayHookSender(RestTemplate restTemplate, @Value("${hookUrl}") String hookUrl){
+        return new DoorayHookSender(restTemplate, hookUrl);
+    }
 }
