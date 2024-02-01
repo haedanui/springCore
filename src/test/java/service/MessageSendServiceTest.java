@@ -4,13 +4,9 @@ import com.nhn.dooray.client.DoorayHook;
 import com.nhn.dooray.client.DoorayHookSender;
 import com.nhnacademy.edu.springframework.domain.User;
 import com.nhnacademy.edu.springframework.sender.impl.DoorayMessageSender;
-import com.nhnacademy.edu.springframework.service.MessageSendService;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.mockito.Mockito.*;
 
