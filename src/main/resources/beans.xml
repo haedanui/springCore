@@ -29,8 +29,6 @@
     <bean id="messageSendService" class="com.nhnacademy.edu.springframework.service.MessageSendService" autowire="byType">
     </bean>
 
-
-
     <bean id="logging" class="com.nhnacademy.edu.springframework.aop.Logging"/>
 
     <aop:config>
@@ -40,6 +38,5 @@
         </aop:aspect>
     </aop:config>
 
-    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 
 </beans>
