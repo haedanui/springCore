@@ -1,9 +1,10 @@
 package com.nhnacademy.edu.springframework;
 
 
+import com.nhnacademy.edu.springframework.config.SenderConfig;
 import com.nhnacademy.edu.springframework.domain.User;
 import com.nhnacademy.edu.springframework.service.MessageSendService;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,9 +13,8 @@ public class Main {
                 "유승진",
                 TEST_MESSAGE
         );
-        try(ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")){
-            MessageSendService messageSendService = context.getBean("messageSendService", MessageSendService.class);
-            messageSendService.doSendMessage(user, TEST_MESSAGE);
-        }
+
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SenderConfig.class);
+        context.getBean("messageSendService", MessageSendService.class).doSendMessage(user, "테스트입니다.");
     }
 }
