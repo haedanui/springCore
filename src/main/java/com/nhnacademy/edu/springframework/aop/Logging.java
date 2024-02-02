@@ -21,7 +21,7 @@ public class Logging {
             throw new RuntimeException(e);
         }finally {
             stopWatch.stop();
-            log.error("[{}].[{}].[{}ms]", pjp.getSignature().getDeclaringType(), pjp.getSignature().getName(), stopWatch.getLastTaskTimeMillis());
+            log.error("[{}].[{}].[{}ms]", pjp.getSignature().getDeclaringType().getSimpleName(), pjp.getSignature().getName(), stopWatch.getLastTaskTimeMillis());
         }
     return target;
     }
