@@ -1,6 +1,7 @@
 package com.nhnacademy.edu.springframework.config;
 
 import com.nhn.dooray.client.DoorayHookSender;
+import com.nhnacademy.edu.springframework.annotation.Custom;
 import com.nhnacademy.edu.springframework.aop.Logging;
 import com.nhnacademy.edu.springframework.sender.MessageSender;
 import com.nhnacademy.edu.springframework.sender.impl.DoorayMessageSender;
@@ -18,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
 public class SenderConfig {
 
     @Bean
+    @Custom
     public DoorayMessageSender doorayMessageSender(DoorayHookSender doorayHookSender){
         return new DoorayMessageSender(doorayHookSender);
     }

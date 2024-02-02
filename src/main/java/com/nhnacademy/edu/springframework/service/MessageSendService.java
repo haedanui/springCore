@@ -1,5 +1,6 @@
 package com.nhnacademy.edu.springframework.service;
 
+import com.nhnacademy.edu.springframework.annotation.Custom;
 import com.nhnacademy.edu.springframework.domain.User;
 import com.nhnacademy.edu.springframework.sender.MessageSender;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ public class MessageSendService {
 
 
     @Autowired
-    public MessageSendService(@Qualifier("doorayMessageSender") MessageSender messageSender){
+    public MessageSendService(@Custom MessageSender messageSender){
         this.messageSender = messageSender;
     }
 
