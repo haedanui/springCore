@@ -24,6 +24,7 @@
 
     <bean id="doorayMessageSender" class="com.nhnacademy.edu.springframework.sender.impl.DoorayMessageSender">
         <constructor-arg ref="doorayHookSender"/>
+        <qualifier type="com.nhnacademy.edu.springframework.annotation.Custom"/>
     </bean>
 
     <bean id="messageSendService" class="com.nhnacademy.edu.springframework.service.MessageSendService" autowire="byType">
